@@ -1,0 +1,50 @@
+name: Live evals
+
+# 真模型評測要花錢，只手動觸發。需要在 repo 的 Secrets 設定 ANTHROPIC_API_KEY。
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Model under test
+        default: claude-opus-5-5
+      judge_model:
+        description: Judge model
+        default: claude-opus-5-5
+      runs:
+        description: Runs per case
+        default: "5"
+      cases:
+        description: Comma-separated case IDs (empty = all)
+        default: ""
+
+jobs:
+  evals:
+    name: Live evals
+    runs-on: ubuntu-24.04-arm
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - name: Check the API key
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then echo "Set the ANTHROPIC_API_KEY secret first"; exit 1; fi
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Check the judge against human labels first
+        run: python -m evals.calibrate_judge --judge-model "${{ inputs.judge_model }}"
+
+      - name: Run the eval cases
+        run: >
+          python -m evals.run_evals --model "${{ inputs.model }}" --judge-model "${{ inputs.judge_model }}"
+          --runs "${{ inputs.runs }}" ${{ inputs.cases && format('--cases {0}', inputs.cases) || '' }}
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: eval-results
+          path: results/
