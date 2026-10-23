@@ -10,7 +10,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import anthropic
 import pytest
 
-from agent.harness import TOOLS, Agent
+from agent.harness import Agent, tools_for
 from agent.models import ClaudeModel
 from evals.judge import Judge
 
@@ -75,7 +75,7 @@ def test_agent_request_and_tool_loop_through_the_sdk(board, api_with):
     first, second = (r["body"] for r in api.requests)
     assert api.requests[0]["path"] == "/v1/messages"
     assert first["model"] == "claude-opus-5-5" and first["output_config"] == {"effort": "medium"}
-    assert first["tools"] == TOOLS and "求職助理" in first["system"]
+    assert first["tools"] == tools_for("seeker") and "求職助理" in first["system"]
     assert first["cache_control"] == {"type": "ephemeral"}
     # 第二回合：thinking 區塊原樣送回，工具結果對應到 toolu_1
     assert second["messages"][1]["content"][0] == {"type": "thinking", "thinking": "", "signature": "sig"}

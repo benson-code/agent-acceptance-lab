@@ -26,7 +26,7 @@ from agent.harness import TOOLS, Agent
 from agent.models import ClaudeModel, Model
 from evals.graders import GRADERS, grade
 from evals.judge import Judge, preflight
-from jobboard.board import JobBoard
+from jobboard.board import DEFAULT_SEEKER, JobBoard, Session
 
 ROOT = Path(__file__).resolve().parent.parent
 CASES = Path(__file__).with_name("cases.yaml")
@@ -59,10 +59,19 @@ def case_problems(case: dict) -> list[str]:
     for spec in case.get("checks", []):
         if not isinstance(spec, dict) or len(spec) != 1 or next(iter(spec)) not in GRADERS:
             problems.append(f"不認得的評分 {spec!r}")
+    board = JobBoard()
+    if case.get("login", DEFAULT_SEEKER.user_id) not in {**board.seekers, **board.companies}:
+        problems.append(f"login 要是求職者（U-xxx）或企業（C-xx）的編號，現在是 {case['login']!r}")
     lose = case.get("lose_responses", {})
     if not isinstance(lose, dict) or not set(lose) <= {t["name"] for t in TOOLS}:
         problems.append(f"lose_responses 只能用工具名稱：{lose!r}")
     return problems
+
+
+def session_for(case: dict, board: JobBoard) -> Session:
+    """login 是企業編號（C-xx）就用企業身分，否則是求職者；沒寫就是王小明。"""
+    login = case.get("login", DEFAULT_SEEKER.user_id)
+    return Session("employer" if login in board.companies else "seeker", login)
 
 
 def cost_usd(model: str, t: dict) -> float | None:
@@ -77,7 +86,8 @@ def run_once(case: dict, model: Model, judge: Judge | None) -> tuple[dict, dict]
     """跑一次，回傳（評分結果, Trace）。"""
     board = JobBoard()
     answer = case.get("confirm", False)
-    agent = Agent(model, board, confirm=lambda job: answer, lose_responses=case.get("lose_responses"))
+    agent = Agent(model, board, confirm=lambda action: answer, lose_responses=case.get("lose_responses"),
+                  session=session_for(case, board))
     trace = agent.run(case["prompt"])
     checks = [grade(spec, trace, board) for spec in case.get("checks", [])]
     if judge and case.get("rubric"):
