@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B0000000000000000000021 /* 1-duo-jobseeker.html in Resources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000011 /* 1-duo-jobseeker.html */; };
+		2B0000000000000000000022 /* 2-duo-employer.html in Resources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000012 /* 2-duo-employer.html */; };
+		2B0000000000000000000023 /* 3-folded-trace.html in Resources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000013 /* 3-folded-trace.html */; };
+		2B0000000000000000000024 /* 4-settings.html in Resources */ = {isa = PBXBuildFile; fileRef = 2B0000000000000000000014 /* 4-settings.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2B0000000000000000000003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A0000000000000000000061 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A0000000000000000000051;
+			remoteInfo = JobAgent;
+		};
+		2C0000000000000000000003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A0000000000000000000061 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A0000000000000000000051;
+			remoteInfo = JobAgent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A0000000000000000000001 /* JobAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0000000000000000000003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B0000000000000000000001 /* JobAgentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobAgentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B0000000000000000000011 /* 1-duo-jobseeker.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "design/stitch/1-duo-jobseeker.html"; sourceTree = "<group>"; };
+		2B0000000000000000000012 /* 2-duo-employer.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "design/stitch/2-duo-employer.html"; sourceTree = "<group>"; };
+		2B0000000000000000000013 /* 3-folded-trace.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "design/stitch/3-folded-trace.html"; sourceTree = "<group>"; };
+		2B0000000000000000000014 /* 4-settings.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "design/stitch/4-settings.html"; sourceTree = "<group>"; };
+		2C0000000000000000000001 /* JobAgentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobAgentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2A0000000000000000000002 /* JobAgent */ = {isa = PBXFileSystemSynchronizedRootGroup; path = JobAgent; sourceTree = "<group>"; };
+		2B0000000000000000000002 /* JobAgentTests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = JobAgentTests; sourceTree = "<group>"; };
+		2C0000000000000000000002 /* JobAgentUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; path = JobAgentUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A0000000000000000000031 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B0000000000000000000031 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C0000000000000000000031 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A0000000000000000000041 = {
+			isa = PBXGroup;
+			children = (
+				2A0000000000000000000002 /* JobAgent */,
+				2B0000000000000000000002 /* JobAgentTests */,
+				2C0000000000000000000002 /* JobAgentUITests */,
+				2A0000000000000000000003 /* Info.plist */,
+				2B0000000000000000000043 /* Design */,
+				2A0000000000000000000042 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A0000000000000000000042 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000000000000000000001 /* JobAgent.app */,
+				2B0000000000000000000001 /* JobAgentTests.xctest */,
+				2C0000000000000000000001 /* JobAgentUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B0000000000000000000043 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				2B0000000000000000000011 /* 1-duo-jobseeker.html */,
+				2B0000000000000000000012 /* 2-duo-employer.html */,
+				2B0000000000000000000013 /* 3-folded-trace.html */,
+				2B0000000000000000000014 /* 4-settings.html */,
+			);
+			name = Design;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A0000000000000000000051 /* JobAgent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0000000000000000000071 /* Build configuration list for PBXNativeTarget "JobAgent" */;
+			buildPhases = (
+				2A0000000000000000000032 /* Sources */,
+				2A0000000000000000000031 /* Frameworks */,
+				2A0000000000000000000033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2A0000000000000000000002 /* JobAgent */,
+			);
+			name = JobAgent;
+			productName = JobAgent;
+			productReference = 2A0000000000000000000001 /* JobAgent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2B0000000000000000000051 /* JobAgentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B0000000000000000000071 /* Build configuration list for PBXNativeTarget "JobAgentTests" */;
+			buildPhases = (
+				2B0000000000000000000032 /* Sources */,
+				2B0000000000000000000031 /* Frameworks */,
+				2B0000000000000000000033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B0000000000000000000004 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2B0000000000000000000002 /* JobAgentTests */,
+			);
+			name = JobAgentTests;
+			productName = JobAgentTests;
+			productReference = 2B0000000000000000000001 /* JobAgentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2C0000000000000000000051 /* JobAgentUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C0000000000000000000071 /* Build configuration list for PBXNativeTarget "JobAgentUITests" */;
+			buildPhases = (
+				2C0000000000000000000032 /* Sources */,
+				2C0000000000000000000031 /* Frameworks */,
+				2C0000000000000000000033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C0000000000000000000004 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2C0000000000000000000002 /* JobAgentUITests */,
+			);
+			name = JobAgentUITests;
+			productName = JobAgentUITests;
+			productReference = 2C0000000000000000000001 /* JobAgentUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A0000000000000000000061 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					2A0000000000000000000051 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					2B0000000000000000000051 = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = 2A0000000000000000000051;
+					};
+					2C0000000000000000000051 = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = 2A0000000000000000000051;
+					};
+				};
+			};
+			buildConfigurationList = 2A0000000000000000000072 /* Build configuration list for PBXProject "JobAgent" */;
+			developmentRegion = "zh-Hant";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				"zh-Hant",
+				Base,
+			);
+			mainGroup = 2A0000000000000000000041;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2A0000000000000000000042 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A0000000000000000000051 /* JobAgent */,
+				2B0000000000000000000051 /* JobAgentTests */,
+				2C0000000000000000000051 /* JobAgentUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A0000000000000000000033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B0000000000000000000033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B0000000000000000000021 /* 1-duo-jobseeker.html in Resources */,
+				2B0000000000000000000022 /* 2-duo-employer.html in Resources */,
+				2B0000000000000000000023 /* 3-folded-trace.html in Resources */,
+				2B0000000000000000000024 /* 4-settings.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C0000000000000000000033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A0000000000000000000032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B0000000000000000000032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C0000000000000000000032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B0000000000000000000004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A0000000000000000000051 /* JobAgent */;
+			targetProxy = 2B0000000000000000000003 /* PBXContainerItemProxy */;
+		};
+		2C0000000000000000000004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A0000000000000000000051 /* JobAgent */;
+			targetProxy = 2C0000000000000000000003 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A0000000000000000000081 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A0000000000000000000082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A0000000000000000000083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "求職 Agent 驗收";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lab.jobagent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2A0000000000000000000084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "求職 Agent 驗收";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lab.jobagent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		2B0000000000000000000083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lab.jobagent.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JobAgent.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JobAgent";
+			};
+			name = Debug;
+		};
+		2B0000000000000000000084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lab.jobagent.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JobAgent.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JobAgent";
+			};
+			name = Release;
+		};
+		2C0000000000000000000083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lab.jobagent.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = JobAgent;
+			};
+			name = Debug;
+		};
+		2C0000000000000000000084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lab.jobagent.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = JobAgent;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A0000000000000000000071 /* Build configuration list for PBXNativeTarget "JobAgent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000000000000000000083 /* Debug */,
+				2A0000000000000000000084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A0000000000000000000072 /* Build configuration list for PBXProject "JobAgent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000000000000000000081 /* Debug */,
+				2A0000000000000000000082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B0000000000000000000071 /* Build configuration list for PBXNativeTarget "JobAgentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B0000000000000000000083 /* Debug */,
+				2B0000000000000000000084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C0000000000000000000071 /* Build configuration list for PBXNativeTarget "JobAgentUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C0000000000000000000083 /* Debug */,
+				2C0000000000000000000084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A0000000000000000000061 /* Project object */;
+}

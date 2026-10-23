@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- 和 Xcode 產生的 key 合併（GENERATE_INFOPLIST_FILE）。這裡只放沒有 build setting 的：
+     - API 伺服器（server/app.py）在開發機上用 HTTP 跑。NSAllowsLocalNetworking 只放行本機和區網，
+       其他網址還是要 TLS。
+     - 設計稿的字型（Fonts/，授權見 Fonts/OFL.txt）。 -->
+<plist version="1.0">
+<dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSerifTC-Regular.ttf</string>
+		<string>NotoSerifTC-SemiBold.ttf</string>
+		<string>Newsreader-Light.ttf</string>
+		<string>Newsreader-Italic.ttf</string>
+		<string>JetBrainsMono-Regular.ttf</string>
+		<string>JetBrainsMono-Medium.ttf</string>
+	</array>
+</dict>
+</plist>

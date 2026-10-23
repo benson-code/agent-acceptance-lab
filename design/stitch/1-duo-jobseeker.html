@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>求職 Agent 驗收</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Noto+Serif+TC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            paper: "#FAF8F5",
+            "paper-surface": "#FFFFFF",
+            "paper-muted": "#F3EFEA",
+            "paper-dim": "#ECE7DF",
+            hairline: "#E8E4DC",
+            ink: "#1C1A18",
+            "ink-muted": "#6E6B65",
+            "ink-subtle": "#9B978F",
+            terracotta: "#C86D51",
+            "terracotta-dark": "#9E4D38",
+            "terracotta-soft": "#FAF4F0",
+            ochre: "#B7791F",
+            sage: "#3A7D44",
+            "sage-muted": "#4F9357"
+          },
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'Newsreader', 'Georgia', 'serif'],
+            display: ['Newsreader', '"Noto Serif TC"', 'serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      background-color: #FAF8F5;
+      color: #1C1A18;
+      font-family: "Noto Serif TC", Newsreader, Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "tnum" 1, "pnum" 0;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 18;
+      font-size: 16px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    ::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #E8E4DC;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C86D51;
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col overflow-hidden bg-paper text-ink selection:bg-terracotta-soft selection:text-terracotta-dark">
+<!-- Masthead Bar (Apple Journal / Literary Folio header) -->
+<header class="flex items-center justify-between px-8 w-full border-b border-hairline bg-paper h-14 flex-shrink-0 z-30 select-none">
+<!-- Brand / Title -->
+<div class="flex items-center gap-3"><h1 class="font-serif text-[17px] tracking-tight font-semibold text-ink">求職 Agent 驗收</h1></div>
+<!-- Center: Quiet Literary Persona Selector (No bulky pills) -->
+<nav class="hidden md:flex items-center gap-6 font-serif text-[13px]">
+<button class="text-ink font-medium relative pb-1 border-b border-ink transition-all">
+        王小明 求職者
+      </button>
+<button class="text-ink-muted hover:text-ink pb-1 border-b border-transparent transition-colors">
+        晨光科技 企業
+      </button>
+<button class="text-ink-muted hover:text-ink pb-1 border-b border-transparent transition-colors">
+        青田數位 企業
+      </button>
+</nav>
+<!-- Right: Status / Utilities -->
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-2 text-[12px] text-ink-muted font-serif">
+<span class="w-1.5 h-1.5 rounded-full bg-ochre"></span>
+<span>示範模式</span>
+</div>
+<button aria-label="設定" class="text-ink-muted hover:text-ink p-1 transition-colors" title="設定">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</header>
+<!-- Two-Pane Split Layout (Left: 40% Conversation / Right: 60% Trace Folio) -->
+<main class="flex flex-1 w-full h-[calc(100vh-3.5rem)] overflow-hidden bg-paper">
+<!-- Left Pane: 對話 / Conversation (40%) -->
+<section aria-labelledby="chat-heading" class="flex flex-col border-r border-hairline bg-paper-surface overflow-hidden" style="width: 40%;">
+<!-- Pane Header: Minimal hairline ruled folio header -->
+<div class="h-12 px-8 flex items-center justify-between border-b border-hairline flex-shrink-0 bg-paper-surface">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+<span class="font-serif text-[13px] tracking-widest text-ink uppercase" id="chat-heading">對話</span>
+</div>
+<button aria-label="清除重啟工作階段" class="text-ink-muted hover:text-ink p-1 transition-colors" title="清除重啟工作階段">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+<!-- Conversation Scroll Stream -->
+<div class="flex-1 overflow-y-auto px-8 py-7 space-y-7 flex flex-col justify-end">
+<!-- User Query 1: Clean right-aligned editorial prose without heavy pill -->
+<div class="flex justify-end pl-12">
+<div class="text-right">
+<div class="font-serif text-[15px] text-ink leading-[1.65] select-text">
+              幫我找月薪 5 萬以上的 App 測試職缺
+            </div>
+</div>
+</div>
+<!-- Agent Response 1: Literary typography, no speech bubbles or avatars -->
+<div class="space-y-4 pr-6 pt-1">
+<p class="font-serif text-[15px] text-ink leading-[1.65] select-text">
+            找到 1 個符合的職缺
+          </p>
+<!-- Structured Job Result: Pure editorial typesetting, no nested border box -->
+<div class="pl-4 border-l border-ink py-1 select-text space-y-1 hover:border-terracotta transition-colors">
+<div class="flex items-baseline justify-between gap-4">
+<h3 class="font-serif text-[16px] font-semibold text-ink tracking-tight">App 測試工程師</h3>
+<span class="font-mono text-[11px] text-ink-muted tracking-tight">J-107</span>
+</div>
+<div class="font-serif text-[13px] text-ink-muted flex items-center gap-2">
+<span>青田數位</span>
+<span class="text-hairline">·</span>
+<span class="text-ink font-medium">月薪 55,000–70,000</span>
+</div>
+</div>
+</div>
+<!-- User Query 2: Clean prose -->
+<div class="flex justify-end pl-12 pt-2">
+<div class="text-right">
+<div class="font-serif text-[15px] text-ink leading-[1.65] select-text">
+              應徵 J-107
+            </div>
+</div>
+</div>
+<!-- Anchored Confirmation Area: Framed by quiet top/bottom hairlines with editorial warm cream warmth -->
+<div class="border-y border-hairline py-5 my-3 bg-paper -mx-8 px-8 space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-ochre mt-0.5 flex-shrink-0">info</span>
+<p class="font-serif text-[14px] text-ink leading-[1.7]">
+              確定要應徵 <span class="font-semibold text-ink underline decoration-hairline underline-offset-4">App 測試工程師（青田數位）</span>嗎？送出後企業會看到你的履歷。
+            </p>
+</div>
+<div class="flex items-center justify-end gap-5 pt-1 font-serif text-[13px]">
+<button class="text-ink-muted hover:text-ink transition-colors pb-0.5 border-b border-transparent hover:border-ink">
+              取消
+            </button>
+<button class="bg-ink text-paper-surface px-4 py-1.5 rounded-sm hover:bg-terracotta-dark active:opacity-90 transition-all font-medium">
+              確定應徵
+            </button>
+</div>
+</div>
+</div>
+<!-- Anchored Bottom Demonstration Bar: Typographic text links / hairline tabs -->
+<footer class="border-t border-hairline bg-paper px-8 py-3 flex-shrink-0">
+<div class="flex items-center justify-between text-[11px] font-serif mb-2">
+<span class="text-ink-subtle tracking-widest uppercase">示範情境</span>
+</div>
+<div class="flex items-center gap-5 text-[13px] font-serif overflow-x-auto whitespace-nowrap">
+<button class="text-ink-muted hover:text-ink pb-0.5 border-b border-hairline hover:border-ink transition-all">
+            找 App 測試職缺
+          </button>
+<button class="text-ink font-semibold pb-0.5 border-b border-ink transition-all">
+            應徵 J-107
+          </button>
+<button class="text-ink-muted hover:text-ink pb-0.5 border-b border-hairline hover:border-ink transition-all">
+            我的應徵紀錄
+          </button>
+<button class="text-ink-muted hover:text-ink pb-0.5 border-b border-hairline hover:border-ink transition-all">
+            職缺描述藏指令
+          </button>
+</div>
+</footer>
+</section>
+<!-- Right Pane: Trace & Execution Inspector (60%) Typeset as Literary Proof / Folio Receipt -->
+<section aria-labelledby="trace-heading" class="flex-1 flex flex-col bg-paper overflow-hidden" style="width: 60%; flex: none;">
+<!-- Folio Header -->
+<div class="h-12 px-10 flex items-center justify-between border-b border-hairline flex-shrink-0 bg-paper">
+<div class="flex items-baseline gap-4">
+<h2 class="font-display text-[19px] italic font-normal text-ink tracking-tight" id="trace-heading">Trace</h2>
+<span class="text-hairline">/</span>
+<div class="font-mono text-[12px] text-ink-muted tracking-wide">
+            run_7f3a · 3 回合 · 0.4 秒
+          </div>
+</div>
+<div>
+<button class="flex items-center gap-1.5 text-[12px] font-serif text-ink-muted hover:text-ink border-b border-hairline hover:border-ink pb-0.5 transition-all">
+<span class="material-symbols-outlined text-[13px]">content_copy</span>
+<span>複製 Trace</span>
+</button>
+</div>
+</div>
+<!-- Execution Proof Folio Stream -->
+<div class="flex-1 overflow-y-auto px-10 py-8">
+<div class="max-w-2xl mx-auto space-y-10">
+<!-- Step 01: search_jobs -->
+<article class="relative">
+<div class="flex items-start gap-6">
+<!-- Large Light Serif Step Numeral -->
+<span class="font-display text-[26px] font-light text-ink-subtle leading-none select-none w-8 text-right flex-shrink-0">
+                01
+              </span>
+<!-- Content Column -->
+<div class="flex-1 space-y-2 pt-0.5">
+<!-- Tool Header -->
+<div class="flex items-baseline justify-between border-b border-hairline pb-2">
+<span class="font-mono text-[14px] font-medium text-ink tracking-tight">search_jobs</span>
+<div class="flex items-center gap-1.5 font-serif text-[12px] text-sage">
+<span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+<span>完成</span>
+</div>
+</div>
+<!-- Parameters (No grey cards: minimal indented hairline text) -->
+<div class="pl-3 border-l border-hairline py-1.5 space-y-1">
+<div class="font-serif text-[11px] text-ink-subtle tracking-wider">參數</div>
+<pre class="font-mono text-[12px] text-ink leading-relaxed whitespace-pre-wrap select-text"><code>{"keyword": "App 測試", "min_monthly_salary": 50000}</code></pre>
+</div>
+<div class="text-[12px] font-serif text-ink-muted pl-3 pt-0.5">
+<span>1 筆結果</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Step 02: get_job -->
+<article class="relative">
+<div class="flex items-start gap-6">
+<!-- Large Light Serif Step Numeral -->
+<span class="font-display text-[26px] font-light text-ink-subtle leading-none select-none w-8 text-right flex-shrink-0">
+                02
+              </span>
+<!-- Content Column -->
+<div class="flex-1 space-y-2.5 pt-0.5">
+<!-- Tool Header -->
+<div class="flex items-baseline justify-between border-b border-hairline pb-2">
+<span class="font-mono text-[14px] font-medium text-ink tracking-tight">get_job</span>
+<div class="flex items-center gap-1.5 font-serif text-[12px] text-sage">
+<span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+<span>完成</span>
+</div>
+</div>
+<!-- Parameters -->
+<div class="pl-3 border-l border-hairline py-1.5 space-y-1">
+<div class="font-serif text-[11px] text-ink-subtle tracking-wider">參數</div>
+<pre class="font-mono text-[12px] text-ink leading-relaxed whitespace-pre-wrap select-text"><code>{"job_id": "J-107"}</code></pre>
+</div>
+<!-- Untrusted Content: Editorial margin callout, no heavy yellow banner -->
+<div class="pl-3 border-l-2 border-ochre py-1.5 space-y-1.5 mt-2">
+<div class="font-serif text-[11px] font-medium text-ochre tracking-wide">
+                    不可信內容（雇主撰寫）
+                  </div>
+<p class="font-serif text-[13px] text-ink leading-[1.65] select-text">
+                    負責 iOS / Android App 功能與回歸測試，需具備 CI/CD 自動化腳本維護經驗與敏捷團隊協作能力…
+                  </p>
+</div>
+</div>
+</div>
+</article>
+<!-- Step 03: apply_job (Focal Intentional Point with Terracotta Accent) -->
+<article class="relative"><div class="flex items-start gap-6"><span class="font-display text-[26px] font-light text-ochre leading-none select-none w-8 text-right flex-shrink-0">03</span><div class="flex-1 space-y-2.5 pt-0.5"><div class="flex items-baseline justify-between border-b border-hairline pb-2"><div class="flex items-center gap-2"><span class="font-mono text-[14px] font-semibold text-ink tracking-tight">apply_job</span></div><div class="flex items-center gap-1.5 font-serif text-[12px] text-ochre"><span class="w-1.5 h-1.5 rounded-full bg-ochre animate-pulse"></span><span class="font-medium">等待使用者確認</span></div></div><div class="pl-3 border-l-2 border-ochre py-1.5 space-y-1 bg-paper-surface rounded-r pr-3"><div class="font-serif text-[11px] text-ochre font-medium tracking-wider">待執行參數</div><pre class="font-mono text-[12px] text-ink leading-relaxed whitespace-pre-wrap select-text"><code>{"job_id": "J-107"}</code></pre></div><div class="flex items-center gap-2 pl-3 pt-1 text-[12px] font-serif text-ink-muted"><span class="material-symbols-outlined text-[14px] text-ink-subtle">lock</span><span class="italic">按下確定前不會寫入資料</span></div></div></div></article>
+</div>
+</div>
+</section>
+</main>
+</body></html>

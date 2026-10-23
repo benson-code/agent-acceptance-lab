@@ -37,3 +37,55 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: python tools/fault_check.py
+
+  ios:
+    name: iOS app (unit and UI tests)
+    # GitHub 的標準 macOS runner（arm64），預設 Xcode 26。App 用到 Swift 6.2 的「預設在 main actor 上執行」，
+    # 要 Xcode 26 以上（同 test-automation-lab 的 iOS job）
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      # UI 測試打真的 API 伺服器：App 看到的就是測試跑的那一份 Agent 和求職平台
+      - name: Start the API server
+        run: |
+          nohup uvicorn server.app:app --port 8430 > server.log 2>&1 &
+          for i in $(seq 30); do curl -sf http://127.0.0.1:8430/health && exit 0; sleep 1; done
+          echo "API server did not start"; cat server.log; exit 1
+
+      # 幾個 iOS 版本都有叫「iPhone 17」的模擬器：挑最新 iOS 那台的 UDID
+      - name: Boot an iPhone 17 simulator
+        run: |
+          udid=$(xcrun simctl list devices available --json | python3 -c '
+          import json, sys
+          devices = json.load(sys.stdin)["devices"]
+          version = lambda runtime: [int(p) for p in runtime.rsplit("iOS-", 1)[1].split("-")]
+          runtimes = sorted((r for r in devices if "iOS-" in r and any(d["name"] == "iPhone 17" for d in devices[r])), key=version)
+          print(next(d["udid"] for d in devices[runtimes[-1]] if d["name"] == "iPhone 17"))
+          ')
+          echo "IOS_UDID=$udid" >> "$GITHUB_ENV"
+          xcrun simctl boot "$udid"
+          xcrun simctl bootstatus "$udid" -b
+
+      # 單元測試（解碼真的伺服器回應、Trace 的判讀、顏色要出自設計稿）和 UI 測試（直向摺起、橫向展開）
+      - name: Build and test the app
+        run: >
+          xcodebuild test -project ios/JobAgent.xcodeproj -scheme JobAgent
+          -destination "platform=iOS Simulator,id=$IOS_UDID" -derivedDataPath ios/build
+          -resultBundlePath reports/ios.xcresult
+          -test-timeouts-enabled YES -default-test-execution-time-allowance 120
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-report
+          path: |
+            reports/
+            server.log

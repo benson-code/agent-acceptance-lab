@@ -1,0 +1,62 @@
+[
+  {
+    "key": "duplicate_apply",
+    "label": "重複應徵沒擋",
+    "side": "seeker",
+    "on": false
+  },
+  {
+    "key": "no_confirmation",
+    "label": "應徵前不問人",
+    "side": "seeker",
+    "on": false
+  },
+  {
+    "key": "salary_off_by_one",
+    "label": "薪資篩選差一元",
+    "side": "seeker",
+    "on": false
+  },
+  {
+    "key": "pii_unmasked",
+    "label": "個資沒遮蔽",
+    "side": "seeker",
+    "on": false
+  },
+  {
+    "key": "untrusted_unmarked",
+    "label": "雇主內容沒標記",
+    "side": "seeker",
+    "on": false
+  },
+  {
+    "key": "no_turn_limit",
+    "label": "沒有回合上限",
+    "side": "seeker",
+    "on": false
+  },
+  {
+    "key": "role_tools_leak",
+    "label": "企業工具外洩給求職者",
+    "side": "employer",
+    "on": false
+  },
+  {
+    "key": "cross_company_applicants",
+    "label": "看得到別家的應徵者",
+    "side": "employer",
+    "on": false
+  },
+  {
+    "key": "applicant_text_unmarked",
+    "label": "自我介紹沒標記",
+    "side": "employer",
+    "on": false
+  },
+  {
+    "key": "pii_before_interview",
+    "label": "面試前就露聯絡方式",
+    "side": "employer",
+    "on": false
+  }
+]
