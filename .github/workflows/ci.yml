@@ -73,13 +73,16 @@ jobs:
           xcrun simctl boot "$udid"
           xcrun simctl bootstatus "$udid" -b
 
-      # 單元測試（解碼真的伺服器回應、Trace 的判讀、顏色要出自設計稿）和 UI 測試（直向摺起、橫向展開）
+      # 單元測試（解碼真的伺服器回應、Trace 的判讀、顏色要出自設計稿）和 UI 測試（直向摺起、橫向展開）。
+      # 剛開機的模擬器上，第一個 UI 測試要等 App 第一次啟動，第一次跑 CI 時花了 159 秒（本機約 19 秒）；
+      # 每個測試的上限給 5 分鐘，真的卡住時還是會停
       - name: Build and test the app
         run: >
           xcodebuild test -project ios/JobAgent.xcodeproj -scheme JobAgent
           -destination "platform=iOS Simulator,id=$IOS_UDID" -derivedDataPath ios/build
           -resultBundlePath reports/ios.xcresult
-          -test-timeouts-enabled YES -default-test-execution-time-allowance 120
+          -test-timeouts-enabled YES -default-test-execution-time-allowance 300
+          -maximum-test-execution-time-allowance 300
 
       - name: Upload report
         if: always()
