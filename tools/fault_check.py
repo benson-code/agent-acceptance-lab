@@ -26,7 +26,8 @@ EXPECTED = {
     "no_confirmation": ["test_declined_application_is_not_sent",
                         "test_confirmed_application_is_sent_once",
                         "test_declined_status_change_is_not_made",          # 企業改狀態走同一個確認關卡
-                        "test_confirmed_status_change_is_made_once"],
+                        "test_confirmed_status_change_is_made_once",
+                        "test_run_pauses_for_confirmation_and_sends_nothing_until_answered"],   # App 的路也抓到
     "salary_off_by_one": ["test_salary_filter_includes_the_boundary",
                           "test_negotiable_salary_counts_as_40000",
                           "test_eval_passes_an_agent_that_behaves"],         # 評測的 grounded 也抓到
