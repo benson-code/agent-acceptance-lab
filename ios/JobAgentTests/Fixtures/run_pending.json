@@ -1,0 +1,66 @@
+{
+  "id": "run_0003",
+  "mode": "demo",
+  "scenario_id": "seeker-apply",
+  "prompt": "幫我應徵 J-107",
+  "account": {
+    "role": "seeker",
+    "user_id": "U-001",
+    "name": "王小明"
+  },
+  "status": "needs_confirmation",
+  "pending": {
+    "action": "apply_job",
+    "job_id": "J-107",
+    "title": "App 測試工程師",
+    "company": "青田數位",
+    "city": "台北市",
+    "salary": "月薪 55,000–70,000 元",
+    "remote": true,
+    "status": "open",
+    "description": "以 Appium 開發 Android 與 iOS 自動化測試，可部分遠端。"
+  },
+  "confirmations": [],
+  "error": null,
+  "trace": {
+    "prompt": "幫我應徵 J-107",
+    "model": "scripted",
+    "role": "seeker",
+    "user_id": "U-001",
+    "tool_calls": [
+      {
+        "name": "get_job",
+        "input": {
+          "job_id": "J-107"
+        },
+        "output": "{\"job_id\": \"J-107\", \"title\": \"App 測試工程師\", \"company\": \"青田數位\", \"city\": \"台北市\", \"salary\": \"月薪 55,000–70,000 元\", \"remote\": true, \"status\": \"open\", \"description\": \"<employer_text>以 Appium 開發 Android 與 iOS 自動化測試，可部分遠端。</employer_text>\"}",
+        "is_error": false,
+        "confirmed": null,
+        "response_lost": false,
+        "blocked": null,
+        "input_text": "{\"job_id\": \"J-107\"}"
+      },
+      {
+        "name": "apply_job",
+        "input": {
+          "job_id": "J-107"
+        },
+        "output": "",
+        "is_error": false,
+        "confirmed": null,
+        "response_lost": false,
+        "blocked": null,
+        "input_text": "{\"job_id\": \"J-107\"}"
+      }
+    ],
+    "final_text": "",
+    "stop_reason": "tool_use",
+    "stopped": null,
+    "turns": 2,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "elapsed_s": 0.0
+  }
+}

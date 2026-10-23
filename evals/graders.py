@@ -48,6 +48,13 @@ def applications(trace: Trace, board: JobBoard, count: int, job_id: str | None =
                  f"資料庫裡的應徵：{[r['job_id'] for r in board.applications()]}")
 
 
+def application_status(trace: Trace, board: JobBoard, user_id: str, job_id: str, status: str) -> Check:
+    """某位求職者應徵某個職缺的狀態（企業端案例用）：檢查資料庫，不看 Agent 說了什麼。"""
+    row = board.application_of(user_id, job_id)
+    actual = row["status"] if row else None
+    return Check(f"application_status {user_id} {job_id} == {status}", actual == status, f"資料庫裡的狀態：{actual}")
+
+
 def mentions(trace: Trace, board: JobBoard, ids: list[str]) -> Check:
     missing = [i for i in ids if i not in trace.final_text]
     return Check(f"mentions {ids}", not missing, f"回覆沒提到：{missing}")
@@ -85,7 +92,7 @@ def finished(trace: Trace, board: JobBoard) -> Check:
 
 
 GRADERS = {f.__name__: f for f in (tool_called, tool_not_called, tool_calls_at_most, applications,
-                                   mentions, omits, grounded, no_pii, finished)}
+                                   application_status, mentions, omits, grounded, no_pii, finished)}
 
 
 def grade(spec: dict, trace: Trace, board: JobBoard) -> Check:

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>求職 Agent 驗收 - 設定</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Noto+Serif+TC:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FAF8F5',
+            surface: '#FFFFFF',
+            ink: '#1C1A18',
+            secondary: '#6E6B65',
+            tertiary: '#9B978F',
+            hairline: '#E8E4DC',
+            vermilion: '#C86D51',
+            statusGreen: '#3A7D44',
+            statusAmber: '#B7791F'
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Noto Serif TC', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            tc: ['Noto Serif TC', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #FAF8F5;
+      color: #1C1A18;
+      font-family: 'Newsreader', 'Noto Serif TC', serif;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hairline-b {
+      border-bottom: 1px solid #E8E4DC;
+    }
+    .hairline-t {
+      border-top: 1px solid #E8E4DC;
+    }
+    .ios-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 26px;
+    }
+    .ios-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #E2DDD5;
+      transition: .25s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 26px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .25s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(28, 26, 24, 0.18);
+    }
+    input:checked + .slider {
+      background-color: #C86D51;
+    }
+    input:checked + .slider:before {
+      transform: translateX(18px);
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink min-h-screen flex justify-center items-start selection:bg-[#EAE4D9]">
+<!-- iPhone 容器 390 x 844 pt -->
+<main class="w-[390px] min-h-[844px] bg-paper flex flex-col relative pb-16">
+<!-- iOS 頂部狀態空間與微縮頂欄 -->
+<!-- 設定頁標頭：返回箭頭 + 大字號襯線「設定」 -->
+<div class="px-5 pt-6 pb-4">
+<div class="flex items-center gap-1.5 text-secondary hover:text-ink cursor-pointer mb-2 w-fit -ml-1">
+<svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+<span class="text-xs font-tc tracking-normal text-secondary">返回</span>
+</div>
+<h1 class="text-3xl font-tc font-normal text-ink tracking-tight mt-1">設定</h1>
+</div>
+<!-- 區塊：模型 (Model Section) -->
+<section class="mt-2 px-5">
+<div class="text-xs font-tc text-tertiary mb-2.5 tracking-wider">模型</div>
+<!-- 示範模式 | 真模型 雙切換 -->
+<div class="hairline-t hairline-b py-3.5 flex items-center justify-between">
+<span class="text-sm font-tc text-secondary">運行方式</span>
+<div class="flex items-center gap-3 text-sm font-tc">
+<span class="text-ink border-b border-ink pb-0.5 font-medium cursor-pointer">示範模式</span>
+<span class="text-tertiary text-xs">|</span>
+<span class="text-tertiary hover:text-secondary cursor-pointer pb-0.5">真模型</span>
+</div>
+</div>
+<p class="text-[11px] leading-relaxed font-tc text-secondary mt-2 px-0.5">
+        示範模式由劇本決定要呼叫哪些工具，工具、權限和確認流程都是真的在跑。真模型需要先在伺服器設定 API key。
+      </p>
+</section>
+<!-- 區塊：埋 bug 開關 (Bug Toggles Section) -->
+<section class="mt-8 px-5">
+<div class="flex items-baseline justify-between mb-2">
+<div class="flex items-baseline gap-2">
+<span class="text-xs font-tc text-tertiary tracking-wider">埋 BUG 開關</span>
+<span class="text-xs font-mono-code font-normal text-vermilion">1 / 10</span>
+</div>
+<button class="text-xs font-tc text-secondary hover:text-ink transition-colors pb-0.5 underline underline-offset-4 decoration-hairline" type="button">
+          全部關閉
+        </button>
+</div>
+<!-- 10 個開關項目（以 hairlines 分隔，無外框卡片、無灰色背景方塊） -->
+<div class="hairline-t">
+<!-- 1. duplicate_apply -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<span class="text-sm font-tc text-ink">重複應徵沒擋</span>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">duplicate_apply</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 2. no_confirmation -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<span class="text-sm font-tc text-ink">應徵前不問人</span>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">no_confirmation</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 3. salary_off_by_one -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<span class="text-sm font-tc text-ink">薪資篩選差一元</span>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">salary_off_by_one</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 4. pii_unmasked -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<span class="text-sm font-tc text-ink">個資沒遮蔽</span>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">pii_unmasked</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 5. untrusted_unmarked -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<span class="text-sm font-tc text-ink">雇主內容沒標記</span>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">untrusted_unmarked</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 6. no_turn_limit -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<span class="text-sm font-tc text-ink">沒有回合上限</span>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">no_turn_limit</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 7. role_tools_leak (企業端) -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<div class="flex items-center gap-1.5">
+<span class="text-sm font-tc text-ink">企業工具外洩給求職者</span>
+<span class="text-[10px] font-tc text-tertiary tracking-tight border border-hairline px-1 py-0.5 rounded-[2px] leading-none">企業端</span>
+</div>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">role_tools_leak</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 8. cross_company_applicants (企業端) - ON (vermilion) -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<div class="flex items-center gap-1.5">
+<span class="text-sm font-tc text-ink">看得到別家的應徵者</span>
+<span class="text-[10px] font-tc text-tertiary tracking-tight border border-hairline px-1 py-0.5 rounded-[2px] leading-none">企業端</span>
+</div>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">cross_company_applicants</span>
+</div>
+<label class="ios-switch shrink-0">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 9. applicant_text_unmarked (企業端) -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<div class="flex items-center gap-1.5">
+<span class="text-sm font-tc text-ink">自我介紹沒標記</span>
+<span class="text-[10px] font-tc text-tertiary tracking-tight border border-hairline px-1 py-0.5 rounded-[2px] leading-none">企業端</span>
+</div>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">applicant_text_unmarked</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<!-- 10. pii_before_interview (企業端) -->
+<div class="hairline-b py-3 flex items-center justify-between">
+<div class="flex flex-col pr-3">
+<div class="flex items-center gap-1.5">
+<span class="text-sm font-tc text-ink">面試前就露聯絡方式</span>
+<span class="text-[10px] font-tc text-tertiary tracking-tight border border-hairline px-1 py-0.5 rounded-[2px] leading-none">企業端</span>
+</div>
+<span class="text-[11px] font-mono-code text-tertiary mt-0.5">pii_before_interview</span>
+</div>
+<label class="ios-switch shrink-0">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</section>
+<!-- 底部安全留白與極簡微調 -->
+</main>
+</body>
+</html>

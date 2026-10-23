@@ -4,3 +4,4 @@ __pycache__/
 reports/
 results/
 .DS_Store
+ios/build/

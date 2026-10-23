@@ -1,0 +1,44 @@
+{
+  "id": "run_0001",
+  "mode": "demo",
+  "scenario_id": "morning-other",
+  "prompt": "那 J-102 的應徵者呢？",
+  "account": {
+    "role": "employer",
+    "user_id": "C-01",
+    "name": "晨光科技"
+  },
+  "status": "done",
+  "pending": null,
+  "confirmations": [],
+  "error": null,
+  "trace": {
+    "prompt": "那 J-102 的應徵者呢？",
+    "model": "scripted",
+    "role": "employer",
+    "user_id": "C-01",
+    "tool_calls": [
+      {
+        "name": "list_applicants",
+        "input": {
+          "job_id": "J-102"
+        },
+        "output": "找不到職缺 J-102",
+        "is_error": true,
+        "confirmed": null,
+        "response_lost": false,
+        "blocked": "not_owner",
+        "input_text": "{\"job_id\": \"J-102\"}"
+      }
+    ],
+    "final_text": "找不到 J-102 這個職缺。",
+    "stop_reason": "end_turn",
+    "stopped": null,
+    "turns": 2,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "elapsed_s": 0.002
+  }
+}
